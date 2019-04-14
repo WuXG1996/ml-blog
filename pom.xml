@@ -6,7 +6,7 @@
 	<groupId>com.extlight</groupId>
 	<artifactId>ml-blog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>ML-Blog</name>
 	<description>个人博客</description>

@@ -29,7 +29,7 @@
 							</span>
 						</header>
 						<div class="" th:utext="${md.md2html(post.content)}" ></div>
-						<ul class="copyright-declare">
+						<!--<ul class="copyright-declare">
 							<li>
 								<strong>本文作者:</strong> [[${#servletContext.getAttribute('paramMap')['author']}]]
 							</li>
@@ -39,7 +39,7 @@
 							<li>
 								<strong>版权声明:</strong>  本博客所有文章除特别声明外均为原创，采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请在文章开头明显位置注明原文链接和作者等相关信息，明确指出修改（如有），并通过 E-mail 等方式告知，谢谢合作！
 							</li>
-						</ul>
+						</ul>-->
 						<div class="meta split split--responsive cf">
 							<div class="split__title">
 								<time datetime="${#dates.format(post.createTime,'yyyy/MM/dd')}">[[${#dates.format(post.publishDate,'yyyy/MM/dd')}]]</time>
