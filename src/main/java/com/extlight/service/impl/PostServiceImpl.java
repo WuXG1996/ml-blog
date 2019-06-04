@@ -219,6 +219,17 @@ public class PostServiceImpl extends BaseServiceImpl<Post> implements PostServic
     }
 
     @Override
+    public void change(Integer id) {
+        Post post = this.postMapper.selectByPrimaryKey(id);
+        if(post.getStatus().equals(1)){
+            post.setStatus(0);
+        }else{
+            post.setStatus(1);
+        }
+        this.postMapper.updateByPrimaryKey(post);
+    }
+
+    @Override
     public void importFiles(String path) throws GlobalException {
         File dir = new File(path);
         if (!dir.isDirectory()) {

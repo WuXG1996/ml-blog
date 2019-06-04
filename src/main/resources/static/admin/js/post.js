@@ -38,7 +38,8 @@ var postManager = {
                         htmlArr.push("<td>"+(post.publishDate || '')+"</td>");
                         htmlArr.push("<td>"+post.createTime+"</td>");
                         htmlArr.push("<td class='actions'><button type='button' class='btn btn-info waves-effect m-b-5 edit' data-id='"+post.id+"'>编辑</button>");
-                        htmlArr.push("  <button type='button' class='btn btn-danger waves-effect m-b-5 delete' data-id='"+post.id+"'>删除</button></td>");
+                        htmlArr.push("  <button type='button' class='btn btn-danger waves-effect m-b-5 delete' data-id='"+post.id+"'>删除</button>");
+                        htmlArr.push(" <button type='button' class='btn btn-purple waves-effect m-b-5 change' data-id='"+post.id+"'>切换</button> </td>")
                         htmlArr.push("</tr>");
 
                     }
@@ -137,6 +138,31 @@ var postManager = {
                         }
                     },"json");
                 });
+        });
+
+        $(".change").on("click", function () {
+           var that = this;
+           swal({
+               title: "确认切换吗？",
+               text: "",
+               type: "warning",
+               showCancelButton: true,
+               confirmButtonColor: "#DD6B55",
+               confirmButtonText: "确定",
+               cancelButtonText: "取消",
+               closeOnConfirm: false
+           },
+           function(){
+               var id = $(that).data("id");
+               $.post("/admin/post/change/"+id,null,function (resp) {
+                   if (resp.code == 200) {
+                       swal("切换成功", "","success");
+                       postManager.getList();
+                   } else {
+                       swal("切换失败", resp.msg,"error");
+                   }
+               },"json");
+           });
         });
     },
     registerEvent: function () {

@@ -7,6 +7,7 @@ import com.extlight.model.Post;
 import com.extlight.service.PostService;
 import com.extlight.web.exception.GlobalException;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.annotations.ResultType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -95,6 +96,17 @@ public class PostController {
             return Result.success();
         } catch (Exception e) {
             throw  new GlobalException(500,e.getMessage());
+        }
+    }
+
+    @SysLog("修改文章公开状态")
+    @PostMapping("/change/{id}")
+    public Result change(@PathVariable Integer id){
+        try{
+            this.postService.change(id);
+            return Result.success();
+        } catch (Exception e){
+            throw new GlobalException(500, e.getMessage());
         }
     }
 

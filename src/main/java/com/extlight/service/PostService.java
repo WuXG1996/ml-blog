@@ -90,10 +90,13 @@ public interface PostService extends BaseService<Post> {
      */
     void deleteBatch(String ids) throws GlobalException;
 
+    void change(Integer id);
+
     /**
      * 导入文件
      * @param path 文件目录
      */
     void importFiles(String path) throws GlobalException;
+
 
 }
