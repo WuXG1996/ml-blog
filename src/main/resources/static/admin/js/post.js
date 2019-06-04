@@ -218,6 +218,29 @@ var postManager = {
             postManager.createFileComponent();
         });
 
+        $("#updateBtn").on("click",function () {
+            var parameter = {
+                "id": $("#id").val(),
+                "title": $("#title").val(),
+                "keyword": $("#keyword").val(),
+                "categoryId": $("#categoryId").val(),
+                "tags": $("#tags").val(),
+                "status": ($("#showStatus").prop("checked") ? 1: 0 ),
+                "imgUrl": $("#imgUrl").val(),
+                "content": postManager.myEditor.getMarkdown()
+            };
+
+            $.post("/admin/post/save",parameter,function (resp) {
+                if (resp.code == 200) {
+                    // $("#saveUI").modal("hide");
+                    swal("保存成功", "","success");
+                    // postManager.getList();
+                } else {
+                    swal("保存失败", resp.msg,"error");
+                }
+            },"json");
+        });
+
         $("#submitBtn").on("click",function () {
             var parameter = {
                 "id": $("#id").val(),
