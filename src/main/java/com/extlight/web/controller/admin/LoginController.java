@@ -59,6 +59,7 @@ public class LoginController {
 
         try {
 
+            session.setMaxInactiveInterval(4*60*60);
             String capText = (String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
 
             if (!capText.equals(loginVo.getCaptcha())) {
