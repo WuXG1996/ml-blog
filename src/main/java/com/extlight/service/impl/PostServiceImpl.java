@@ -229,6 +229,8 @@ public class PostServiceImpl extends BaseServiceImpl<Post> implements PostServic
             update.setStatus(1);
         }
         this.postMapper.updateByPrimaryKeySelective(update);
+        // 清理缓存
+        CacheUtil.deleteAll();
     }
 
     @Override
