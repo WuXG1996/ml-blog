@@ -37,6 +37,12 @@ public class LoginController {
     @Autowired
     private Producer captchaProducer;
 
+    /**
+     * 获取验证码
+     * @param response
+     * @param session
+     * @throws Exception
+     */
     @GetMapping(value = {"/captcha","/captcha.do"})
     public void getKaptchaImage(HttpServletResponse response, HttpSession session) throws Exception {
         response.setDateHeader("Expires", 0);
