@@ -39,7 +39,7 @@
 
     <!-- 日志输出级别，level 默认值 DEBUG，root 其实是 logger，它是 logger 的根 -->
     <root level="INFO">
-        <appender-ref ref="STDOUT" />
+        <!--<appender-ref ref="STDOUT" />-->
         <!--<appender-ref ref="FILE" />-->
     </root>
 
