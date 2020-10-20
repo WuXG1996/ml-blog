@@ -12,19 +12,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableAsync
 @EnableCaching
 @SpringBootApplication
-public class MlBlogApplication extends SpringBootServletInitializer {
-
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        log.trace("this is trace level!!");
-        log.debug("this is debug level!!");
-        log.info("this is info level!!");
-        log.warn("this is warn level!!");
-        log.error("this is error level!!");
-
-		return application.sources(MlBlogApplication.class);
-	}
-
+public class MlBlogApplication{
 	public static void main(String[] args) {
 		SpringApplication.run(MlBlogApplication.class, args);
 	}

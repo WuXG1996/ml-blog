@@ -19,6 +19,8 @@
 	</parent>
 
 	<properties>
+		<!-- 跳过打包时运行单元测试 -->
+		<skipTests>true</skipTests>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
@@ -296,6 +298,15 @@
 				<configuration>
 					<!-- 没有该配置，devtools 不生效 -->
 					<fork>true</fork>
+					<!-- 可以外置lib依赖 -->
+					<!--<mainClass>com.extlight.MlBlogApplication</mainClass>
+					<layout>ZIP</layout>-->
+					<includes>
+						<include>
+							<groupId>nothing</groupId>
+							<artifactId>nothing</artifactId>
+						</include>
+					</includes>
 				</configuration>
 			</plugin>
 			<!-- 打包部署 -->
