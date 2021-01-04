@@ -299,14 +299,14 @@
 					<!-- 没有该配置，devtools 不生效 -->
 					<fork>true</fork>
 					<!-- 可以外置lib依赖 -->
-					<mainClass>com.extlight.MlBlogApplication</mainClass>
+					<!--<mainClass>com.extlight.MlBlogApplication</mainClass>
 					<layout>ZIP</layout>
 					<includes>
 						<include>
 							<groupId>nothing</groupId>
 							<artifactId>nothing</artifactId>
 						</include>
-					</includes>
+					</includes>-->
 				</configuration>
 			</plugin>
 			<!-- 打包部署 -->

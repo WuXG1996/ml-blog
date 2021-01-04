@@ -5,8 +5,9 @@
     <include resource="logback/logback-base.xml" />
     <!-- 日志输出级别 -->
     <root level="INFO">
-        <!-- 错误日志 -->
-        <appender-ref ref="errorLog"/>
+<!--        &lt;!&ndash; 错误日志 &ndash;&gt;-->
+<!--        <appender-ref ref="errorLog"/>-->
+        <appender-ref ref="STDOUT"/>
         <!-- 消息日志 -->
         <appender-ref ref="infoLog"/>
     </root>
